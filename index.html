@@ -25,13 +25,18 @@
                 cuenta = Number(sumauno.innerHTML)
                 cuenta = cuenta + 1
                 sumauno.innerHTML = cuenta
+                total = document.querySelector(`#valortotal`)
+                total.innerHTML = Math.max(cuenta * precio, 0)
                 ">+</button>
                 <button id="resta"
                 onclick="
                 restauno = document.querySelector(`#cantidad`)
                 cuenta = Number(restauno.innerHTML)
                 cuenta = cuenta - 1
+                cuenta = Math.max(cuenta, 0)
                 restauno.innerHTML = cuenta
+                total = document.querySelector(`#valortotal`)
+                total.innerHTML = Math.max(cuenta * precio, 0)
                 ">-</button>
               </p>
             </div>
@@ -40,7 +45,7 @@
     </section>
 
     <div class="total-section">
-        <p>Total a pagar: $ <span id="valortotal"></span> </p>
+        <p>Total a pagar: $ <span id="valortotal">0</span> </p>
     </div>
 
     <script src="./assets/js/index.js">
